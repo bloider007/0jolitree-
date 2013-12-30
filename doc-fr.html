@@ -1,0 +1,381 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>documentation jolitree</title>
+
+<!--[if gte IE 7]> <!-->
+<link rel="stylesheet" type="text/css" media="screen" href="jolitree/css/jolitree.css">
+<!--<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" media="screen" href="jolitree/css/jolitree-ie6.css">
+<![endif]-->
+
+<script type="text/javascript" src="jolitree/jolitree.js"></script>
+
+<style type="text/css">
+body {
+	background-color: #ededed;
+	color: black;
+	font-family: sans-serif;
+	font-size: 0.875em;/*12px;*/
+	font-size: 1em;
+	padding: 1em 2em;
+}
+
+h1 {
+	margin: 0.2em 0 0.67em;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.17em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+h1 span, h2 span, h3 span {
+	border-bottom: 1px solid navy;
+}
+
+pre {
+	overflow:auto;
+	border: 1px solid #e0e0e0;
+	background-color: #fff;
+	color: black;
+	font-family: monospace;
+	padding: 0.5em;
+}
+
+pre, code {
+	/*font-size: 1.334em;*/
+}
+
+.section {
+	border: 1px solid #e0e0e0;
+	background-color: #f5f5f5;
+	color: black;
+	padding: 0 2em;
+	margin: 0 0 1em;
+}
+
+.subsection {
+	margin: 2em 3em 0;
+}
+
+.subsection > p {
+	margin: 1em 2em;
+}
+
+#sample-source {
+	height: 20em;
+	margin: 1em 1em 2em;
+}
+
+#myTree {
+	margin: auto auto 2em;
+	width: 17em;
+	padding: 1em;
+	border: 1px solid black;
+	text-align: left;
+	height: auto;
+}
+</style>
+
+<script type="text/javascript">
+function init() {
+	var tree = new JoliTree(document.getElementById("myTree"));
+}
+
+window.onload = init;
+</script>
+</head>
+
+<body>
+    
+<h1><span>Documentation joliTree</span></h1>
+
+<div class="section">
+	<h2><span>Description</span></h2>
+	<p>
+		JoliTree r&eacute;unit une feuille de style (CSS) et un JavaScript
+		l&eacute;ger (2K minifi&eacute;) pour repr&eacute;senter un arbre en
+		(X)HTML, avec dossiers repliables.
+	</p>
+	<p>
+		<small>
+			Site:
+			<a href="http://joliclic.free.fr/jsdev/jolitree/">
+				http://joliclic.free.fr/jsdev/jolitree/
+			</a>
+		</small>
+	</p>
+</div>
+
+<div class="section">
+	<h2><span>D&eacute;mo</span></h2>
+	
+	<dl id="myTree" class="jolitree">
+		<dd class="last opened">
+			<p>bookmarks</p>
+			<dl>
+				<dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+				<dd class="opened">
+					<p>a folder 1</p>
+					<dl>
+						<dt class="noicon">
+							<img src="img_example/favicon.png" alt="">
+							<a href="#">a link 2</a> (no icon)
+						</dt>
+						<dt><a href="#">a link 3</a></dt>
+						<dd class="last">
+							<p>a folder 2</p>
+							<dl>
+								<dt><a href="#">a link 4</a></dt>
+								<dt class="last"><a href="#">a link 5</a></dt>
+							</dl>
+						</dd>
+					</dl>
+				</dd>
+				<dd class="last">
+					<p>a folder 3</p>
+					<dl>
+						<dt><a href="#">a link 6</a></dt>
+						<dd class="separator"><hr></dd>
+						<dt><a href="#">a link 7</a></dt>
+						<dd class="last">
+							<p>a folder 4</p>
+							<dl>
+								<dt><a href="#">a link 8</a></dt>
+								<dt class="noicon-last">
+									<img src="img_example/favicon.png" alt="">
+									<a href="#">a link 9 (no icon)</a>
+								</dt>
+							</dl>
+						</dd>
+					</dl>
+				</dd>
+			</dl>
+		</dd>
+	</dl>
+</div>
+
+<div class="section">
+	<h2><span>Compatibilit&eacute;</span></h2>
+	<p>
+		Doit fonctionner sur tous les Navigateurs modernes (Firefox, Opera,
+		Safari, Chrome,...).
+		<br>
+		Doit fonctionner sur IE6, IE7, IE8.
+	</p>
+	<p>
+		Le JavaScript utilis&eacute; est non-intrusif, si JavaScript est
+		d&eacute;sactiv&eacute; sur le client l'arbre sera affich&eacute;
+		statiquement, avec toutes les branches ouvertes.
+	</p>
+</div>
+
+<div class="section">
+	<h2><span>Usage</span></h2>
+	<p>
+		La structure HTML utilis&eacute;e pour repr&eacute;senter l'arbre
+		ressemble au format Netscape Bookmarks, elle est bas&eacute;e sur des
+		listes de d&eacute;finition
+		(<code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code> et <code>&lt;dd&gt;</code>).
+	</p>
+	<p>exemple (source de la d&eacute;mo ci-dessus):</p>
+	<pre id="sample-source">
+&lt;dl id=&quot;myTree&quot; class=&quot;jolitree&quot;&gt;
+    &lt;dd class=&quot;last opened&quot;&gt;
+        &lt;p&gt;bookmarks&lt;/p&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 1&lt;/a&gt; &lt;em&gt;- some text -&lt;/em&gt;&lt;/dt&gt;
+            &lt;dd class=&quot;opened&quot;&gt;
+                &lt;p&gt;a folder 1&lt;/p&gt;
+                &lt;dl&gt;
+                    &lt;dt class=&quot;noicon&quot;&gt;
+                        &lt;img src=&quot;img_example/favicon.png&quot; alt=&quot;&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;a link 2&lt;/a&gt; (no icon)
+                    &lt;/dt&gt;
+                    &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 3&lt;/a&gt;&lt;/dt&gt;
+                    &lt;dd class=&quot;last&quot;&gt;
+                        &lt;p&gt;a folder 2&lt;/p&gt;
+                        &lt;dl&gt;
+                            &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 4&lt;/a&gt;&lt;/dt&gt;
+                            &lt;dt class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;a link 5&lt;/a&gt;&lt;/dt&gt;
+                        &lt;/dl&gt;
+                    &lt;/dd&gt;
+                &lt;/dl&gt;
+            &lt;/dd&gt;
+            &lt;dd class=&quot;last&quot;&gt;
+                &lt;p&gt;a folder 3&lt;/p&gt;
+                &lt;dl&gt;
+                    &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 6&lt;/a&gt;&lt;/dt&gt;
+                    &lt;dd class=&quot;separator&quot;&gt;&lt;hr&gt;&lt;/dd&gt;
+                    &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 7&lt;/a&gt;&lt;/dt&gt;
+                    &lt;dd class=&quot;last&quot;&gt;
+                        &lt;p&gt;a folder 4&lt;/p&gt;
+                        &lt;dl&gt;
+                            &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 8&lt;/a&gt;&lt;/dt&gt;
+                            &lt;dt class=&quot;noicon-last&quot;&gt;
+                                &lt;img src=&quot;img_example/favicon.png&quot; alt=&quot;&quot;&gt;
+                                &lt;a href=&quot;#&quot;&gt;a link 9 (no icon)&lt;/a&gt;
+                            &lt;/dt&gt;
+                        &lt;/dl&gt;
+                    &lt;/dd&gt;
+                &lt;/dl&gt;
+            &lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/dd&gt;
+&lt;/dl&gt;
+	</pre>
+	
+	<div class="subsection">
+		<h3><span>Explications</span></h3>
+		<p>
+			Le conteneur global est un &eacute;l&eacute;ment
+			<code>&lt;dl&gt;</code>, avec une classe "<code>jolitree</code>".
+		</p>
+		<p>
+			Un dossier est repr&eacute;sent&eacute; par un <code>&lt;dd&gt;</code>,
+			lequel contient un <code>&lt;p&gt;</code> qui repr&eacute;sente
+			son libell&eacute;, et un <code>&lt;dl&gt;</code> qui contient le
+			contenu proprement dit du dossier.
+		</p>
+		<p>
+			Une simple entr&eacute;e est un <code>&lt;dt&gt;</code> lequel peut
+			&eacute;ventuellement contenir un lien <code>&lt;a&gt;</code>.
+		</p>
+		<p>
+			Enfin, un s&eacute;parateur est repr&eacute;sent&eacute; par un
+			<code>&lt;dd class=&quot;separator&quot;&gt;</code> contenant
+			lui-m&ecirc;me un <code>&lt;hr&gt;</code>.
+		</p>
+	</div>
+	
+	<div class="subsection">
+		<h3><span>Notes:</span></h3>
+		<p>
+			Vous devez ajouter la classe "<code>last</code>" &agrave; chaque
+			&eacute;l&eacute;ment (<code>&lt;dd&gt;</code> ou
+			<code>&lt;dt&gt;</code>) qui est le dernier enfant d'un dossier,
+			c'est n&eacute;cessaire dans le cas o&ugrave; JavaScript n'est pas
+			activ&eacute; sur le client.
+		</p>
+		<p>
+			Si vous souhaitez utiliser une ic&ocirc;ne particuli&egrave;re pour
+			une entr&eacute;e, il suffit de mettre la classe "<code>no-icon</code>"
+			sur le <code>&lt;dt&gt;</code> correspondant, cel&agrave; supprimera
+			l'icone par d&eacute;faut. Il ne vous reste plus qu'&agrave; ajouter une
+			balise <code>&lt;img&gt;</code> dans le <code>&lt;dt&gt;</code>.
+		</p>
+		<p>
+			Si vous souhaitez qu'un dossier soit ouvert par d&eacute;faut lorsque le
+			JavaScript est actif, ajouter lui la classe "<code>opened</code>" sur le
+			<code>&lt;dd&gt;</code> correspondant.
+		</p>
+	</div>
+	
+	<div class="subsection">
+		<h3><span>Styles</span></h3>
+		<p>
+			Pour la mise en forme, il suffit de lier la feuille de style
+			jolitree.css &agrave; la page.
+		</p>
+		<p>
+			Une feuille alternative est disponible pour les anciennes versions
+			d'Internet Explorer (IE6) qui ne comprennent pas la transparence des
+			images png (elle utilise des gifs &agrave; la place).
+			<br>
+			L'id&eacute;al est de lier les 2 feuilles &agrave; l'aide de
+			commentaires conditionnels pour IE6&nbsp;:
+		</p>
+		<pre>
+&lt;!--[if gte IE 7]&gt; &lt;!--&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;jolitree/css/jolitree.css&quot;&gt;
+&lt;!--&lt;![endif]--&gt;
+
+&lt;!--[if lt IE 7]&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;jolitree/css/jolitree-ie6.css&quot;&gt;
+&lt;![endif]--&gt;
+		</pre>
+		<p>
+			Une autre feuille alternative est &eacute;galement disponible,
+			jolitree-tango.css, bas&eacute;e sur le style Tango. Vous pouvez
+			l'utiliser &agrave; la place de jolitree.css, ou cr&eacute;er la votre
+			bien sur.
+		</p>
+	</div>
+	
+	<div class="subsection">
+		<h3><span>Comportements</span></h3>
+		<p>
+			Pour les comportements de pliage/d&eacute;pliage, il vous faut lier
+			le fichier JavaScript jolitree.js, et cr&eacute;er une instance de
+			la classe JoliTree avec l'&eacute;l&eacute;ment <code>&lt;dl&gt;</code>
+			souhait&eacute; en argument&nbsp;:
+		</p>
+		<pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;jolitree/jolitree.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+function init() {
+  var tree = new JoliTree(document.getElementById(&quot;myTree&quot;));
+}
+
+window.onload = init;
+&lt;/script&gt;
+		</pre>
+		<p>
+			Alternativement, vous pouvez utiliser &agrave; la place une version
+			compress&eacute;e. jolitree-min.js est une version minifi&eacute;e
+			(avec JSMin). jolitree-packed.js est compress&eacute; avec le Packer
+			de Dean Edwards. Personnellement, je recommende d'utiliser la version
+			minifi&eacute;e, voir la version non compress&eacute;e, car c'est un
+			d&eacute;j&agrave; un fichier l&eacute;ger ;) .
+		</p>
+	</div>
+	
+	<div class="subsection">
+		<h3><span>Licence</span></h3>
+		<p>
+			JoliTree est sous 
+			<a href="http://opensource.org/licenses/mit-license.php">Licence MIT</a>.
+		</p>
+		<p>
+			Soyez libre de l'utiliser dans vos projets, libre, gratuit ou commercial,
+			de le modifier comme bon vous semble.
+		</p>
+	</div>
+</div>
+
+<div class="section">
+	<h2><span>Outils en relation</span></h2>
+	<p>
+		Avec la derni&egrave;re version de
+		<a href="http://joliclic.free.fr/mozilla/boox/">Boox</a>, une extension pour
+		Firefox, vous pouvez facilement exporter un dossier particulier de vos
+		marque-pages.
+		<br>
+		Et avec le convertisseur
+		<a href="http://joliclic.free.fr/jsdev/jolitree/#converter">bm2jolitree</a>
+		vous pouvez facilement convertir un fichier de marque-page en une structure
+		adapt&eacute;e &agrave; jolitree.
+	</p>
+
+	<p>Ces outils sont disponibles sur mon site&nbsp;:</p>
+	<ul>
+		<li><p>
+			Boox: <a href="http://joliclic.free.fr/mozilla/boox/">http://joliclic.free.fr/mozilla/boox/</a>
+		</p></li>
+		<li><p>
+			bm2jolitree: <a href="http://joliclic.free.fr/jsdev/jolitree/#converter">http://joliclic.free.fr/jsdev/jolitree/#converter</a>
+		</p></li>
+	</ul>
+</div>
+
+<p>Nicolas Martin &lt;joliclic arobase gmail point com&gt;</p>
+</body>
+</html>

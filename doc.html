@@ -1,0 +1,373 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<title>documentation jolitree</title>
+
+<!--[if gte IE 7]> <!-->
+<link rel="stylesheet" type="text/css" media="screen" href="jolitree/css/jolitree.css">
+<!--<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" media="screen" href="jolitree/css/jolitree-ie6.css">
+<![endif]-->
+
+<script type="text/javascript" src="jolitree/jolitree.js"></script>
+
+<style type="text/css">
+body {
+	background-color: #ededed;
+	color: black;
+	font-family: sans-serif;
+	font-size: 0.875em;/*12px;*/
+	font-size: 1em;
+	padding: 1em 2em;
+}
+
+h1 {
+	margin: 0.2em 0 0.67em;
+	text-align: center;
+}
+
+h2 {
+	font-size: 1.17em;
+}
+
+h3 {
+	font-size: 1em;
+}
+
+h1 span, h2 span, h3 span {
+	border-bottom: 1px solid navy;
+}
+
+pre {
+	overflow:auto;
+	border: 1px solid #e0e0e0;
+	background-color: #fff;
+	color: black;
+	font-family: monospace;
+	padding: 0.5em;
+}
+
+pre, code {
+	/*font-size: 1.334em;*/
+}
+
+.section {
+	border: 1px solid #e0e0e0;
+	background-color: #f5f5f5;
+	color: black;
+	padding: 0 2em;
+	margin: 0 0 1em;
+}
+
+.subsection {
+	margin: 2em 3em 0;
+}
+
+.subsection > p {
+	margin: 1em 2em;
+}
+
+#sample-source {
+	height: 20em;
+	margin: 1em 1em 2em;
+}
+
+#myTree {
+	margin: auto auto 2em;
+	width: 17em;
+	padding: 1em;
+	border: 1px solid black;
+	text-align: left;
+	height: auto;
+}
+</style>
+
+<script type="text/javascript">
+function init() {
+	var tree = new JoliTree(document.getElementById("myTree"));
+}
+
+window.onload = init;
+</script>
+</head>
+
+<body>
+    
+<h1><span>Documentation joliTree</span></h1>
+
+<div class="section">
+	<h2><span>Description</span></h2>
+	<p>
+		JoliTree is a CSS Stylesheet and a lightweight JavaScript (2K minified)
+		to represent a (X)HTML tree, with collapsable folders.
+	</p>
+	<p>
+		<small>
+			Homepage:
+			<a href="http://joliclic.free.fr/jsdev/jolitree/">
+				http://joliclic.free.fr/jsdev/jolitree/
+			</a>
+		</small>
+	</p>
+</div>
+
+<div class="section">
+	<h2><span>Demo</span></h2>
+	
+	<dl id="myTree" class="jolitree">
+		<dd class="last opened">
+			<p>bookmarks</p>
+			<dl>
+				<dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+				<dd class="opened">
+					<p>a folder 1</p>
+					<dl>
+						<dt class="noicon">
+							<img src="img_example/favicon.png" alt="">
+							<a href="#">a link 2</a> (no icon)
+						</dt>
+						<dt><a href="#">a link 3</a></dt>
+						<dd class="last">
+							<p>a folder 2</p>
+							<dl>
+								<dt><a href="#">a link 4</a></dt>
+								<dt class="last"><a href="#">a link 5</a></dt>
+							</dl>
+						</dd>
+					</dl>
+				</dd>
+				<dd class="last">
+					<p>a folder 3</p>
+					<dl>
+						<dt><a href="#">a link 6</a></dt>
+						<dd class="separator"><hr></dd>
+						<dt><a href="#">a link 7</a></dt>
+						<dd class="last">
+							<p>a folder 4</p>
+							<dl>
+								<dt><a href="#">a link 8</a></dt>
+								<dt class="noicon-last">
+									<img src="img_example/favicon.png" alt="">
+									<a href="#">a link 9 (no icon)</a>
+								</dt>
+							</dl>
+						</dd>
+					</dl>
+				</dd>
+			</dl>
+		</dd>
+	</dl>
+</div>
+
+<div class="section">
+	<h2><span>Compatibility</span></h2>
+	<p>
+		Should work on all modern Browsers (Firefox, Opera, Safari, Chrome,...).
+		<br>
+		Should work with IE6, IE7, IE8.
+	</p>
+	<p>
+		The JavaScript used is unobstrusive, if JavaScript is not enabled on the
+		client the tree will be displayed statically, all branches opened.
+	</p>
+</div>
+
+<div class="section">
+	<h2><span>Usage</span></h2>
+	<p>
+		The HTML structure used to represent the tree looks like Bookmarks in
+		Netscape format, it is based on definition lists
+		(<code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>  and
+		<code>&lt;dd&gt;</code>).
+	</p>
+	<p>example (source of the demo above):</p>
+	<pre id="sample-source">
+&lt;dl id=&quot;myTree&quot; class=&quot;jolitree&quot;&gt;
+    &lt;dd class=&quot;last opened&quot;&gt;
+        &lt;p&gt;bookmarks&lt;/p&gt;
+        &lt;dl&gt;
+            &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 1&lt;/a&gt; &lt;em&gt;- some text -&lt;/em&gt;&lt;/dt&gt;
+            &lt;dd class=&quot;opened&quot;&gt;
+                &lt;p&gt;a folder 1&lt;/p&gt;
+                &lt;dl&gt;
+                    &lt;dt class=&quot;noicon&quot;&gt;
+                        &lt;img src=&quot;img_example/favicon.png&quot; alt=&quot;&quot;&gt;
+                        &lt;a href=&quot;#&quot;&gt;a link 2&lt;/a&gt; (no icon)
+                    &lt;/dt&gt;
+                    &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 3&lt;/a&gt;&lt;/dt&gt;
+                    &lt;dd class=&quot;last&quot;&gt;
+                        &lt;p&gt;a folder 2&lt;/p&gt;
+                        &lt;dl&gt;
+                            &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 4&lt;/a&gt;&lt;/dt&gt;
+                            &lt;dt class=&quot;last&quot;&gt;&lt;a href=&quot;#&quot;&gt;a link 5&lt;/a&gt;&lt;/dt&gt;
+                        &lt;/dl&gt;
+                    &lt;/dd&gt;
+                &lt;/dl&gt;
+            &lt;/dd&gt;
+            &lt;dd class=&quot;last&quot;&gt;
+                &lt;p&gt;a folder 3&lt;/p&gt;
+                &lt;dl&gt;
+                    &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 6&lt;/a&gt;&lt;/dt&gt;
+                    &lt;dd class=&quot;separator&quot;&gt;&lt;hr&gt;&lt;/dd&gt;
+                    &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 7&lt;/a&gt;&lt;/dt&gt;
+                    &lt;dd class=&quot;last&quot;&gt;
+                        &lt;p&gt;a folder 4&lt;/p&gt;
+                        &lt;dl&gt;
+                            &lt;dt&gt;&lt;a href=&quot;#&quot;&gt;a link 8&lt;/a&gt;&lt;/dt&gt;
+                            &lt;dt class=&quot;noicon-last&quot;&gt;
+                                &lt;img src=&quot;img_example/favicon.png&quot; alt=&quot;&quot;&gt;
+                                &lt;a href=&quot;#&quot;&gt;a link 9 (no icon)&lt;/a&gt;
+                            &lt;/dt&gt;
+                        &lt;/dl&gt;
+                    &lt;/dd&gt;
+                &lt;/dl&gt;
+            &lt;/dd&gt;
+        &lt;/dl&gt;
+    &lt;/dd&gt;
+&lt;/dl&gt;
+	</pre>
+	
+	<div class="subsection">
+		<h3><span>Explanations</span></h3>
+		<p>
+			The global container is an <code>&lt;dl&gt;</code>, with a class
+			"<code>jolitree</code>".
+		</p>
+		<p>
+			A folder is represented by a <code>&lt;dd&gt;</code>, which contains
+			a <code>&lt;p&gt;</code> representing its label, and a
+			<code>&lt;dl&gt;</code> that contains the actual content of this
+			folder.
+		</p>
+		<p>
+			A simple entry is a <code>&lt;dt&gt;</code> which may optionally
+			contain a link <code>&lt;a&gt;</code>
+		</p>
+		<p>
+			Finally, a separator is represented by a
+			<code>&lt;dd class=&quot;separator&quot;&gt;</code>, itself
+			containing a <code>&lt;hr&gt;</code>.
+		</p>
+	</div>
+	
+	<div class="subsection">
+		<h3><span>Notes:</span></h3>
+		<p>
+			You must add the class "<code>last</code>" to each element
+			(<code>&lt;dd&gt;</code> or <code>&lt;dt&gt;</code>) which is the
+			last child of a folder, it is necessary if JavaScript is not enabled
+			on the client.
+		</p>
+		<p>
+			If you want to use a particular icon for an entry, just put the
+			class "<code>no-icon</code>" on the corresponding
+			<code>&lt;dt&gt;</code>, this removes the icon by default. Then,
+			just add your <code>&lt;img&gt;</code> tag in the
+			<code>&lt;dt&gt;</code>.
+		</p>
+		<p>
+			If you want a folder opened by default when JavaScript is enabled,
+			add the class "<code>opened</code>" on the corresponding
+			<code>&lt;dd&gt;</code>.
+		</p>
+	</div>
+	
+	<div class="subsection">
+		<h3><span>Styles</span></h3>
+		<p>
+			For the visual formatting, simply link the stylesheet jolitree.css
+			to the page.
+		</p>
+		<p>
+			A alternative stylesheet is available to be compatible with the old
+			versions of Internet Explorer (IE6), wich don't treat the PNG
+			transparency. This stylesheet use GIF images rather than PNG.
+			<br>
+			Ideally, link the 2 stylesheets with IE conditional comments:
+		</p>
+		<pre>
+&lt;!--[if gte IE 7]&gt; &lt;!--&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;jolitree/css/jolitree.css&quot;&gt;
+&lt;!--&lt;![endif]--&gt;
+
+&lt;!--[if lt IE 7]&gt;
+&lt;link rel=&quot;stylesheet&quot; type=&quot;text/css&quot; media=&quot;screen&quot; href=&quot;jolitree/css/jolitree-ie6.css&quot;&gt;
+&lt;![endif]--&gt;
+		</pre>
+		<p>
+			Another alternative stylesheet is available, jolitree-tango.css,
+			Tango style based. You can use it in place of jolitree.css, or
+			create your own, of course.
+		</p>
+	</div>
+	
+	<div class="subsection">
+		<h3><span>Behaviors</span></h3>
+		<p>
+			To enable the folding/unfolding behavior, you have to link the
+			JavaScript file jolitree.js to your page, and create an instance of
+			the JoliTree class with the cibled <code>&lt;dl&gt;</code> as
+			argument:
+		</p>
+		<pre>
+&lt;script type=&quot;text/javascript&quot; src=&quot;jolitree/jolitree.js&quot;&gt;&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot;&gt;
+function init() {
+  var tree = new JoliTree(document.getElementById(&quot;myTree&quot;));
+}
+
+window.onload = init;
+&lt;/script&gt;
+		</pre>
+		<p>
+			Alternatively, you can use instead a compressed version.
+			jolitree-min.js is a minified version (with JSMin). jolitree-packed
+			is compressed with the Dean Edwards JavaScript Packer. Personaly, I
+			recommend to use the minified version, or the uncompressed version,
+			because it's already a lightweight file ;) .
+		</p>
+	</div>
+	
+	<div class="subsection">
+		<h3><span>License</span></h3>
+		<p>
+			JoliTree is licensed under the
+			<a href="http://opensource.org/licenses/mit-license.php">MIT License</a>.
+		</p>
+		<p>
+			Feel free to use it in your projects, free or commercial, and to modify
+			it as you want.
+		</p>
+	</div>
+</div>
+
+<div class="section">
+	<h2><span>Related Tools</span></h2>
+	<p>
+		With the last version of
+		<a href="http://joliclic.free.fr/mozilla/boox/en/">Boox</a>, a firefox
+		extension, you can easily export a single folder of yours bookmarks.
+		<br>
+		And with the
+		<a href="http://joliclic.free.fr/jsdev/jolitree/en/#converter">bm2jolitree</a>
+		converter you can easily convert a bookmarks file into a jolitree
+		structure.
+	</p>
+
+	<p>All this tools are available on my site:</p>
+	<ul>
+		<li><p>
+			Boox: <a href="http://joliclic.free.fr/mozilla/boox/en/">http://joliclic.free.fr/mozilla/boox/en/</a>
+		</p></li>
+		<li><p>
+			bm2jolitree: <a href="http://joliclic.free.fr/jsdev/jolitree/en/#converter">http://joliclic.free.fr/jsdev/jolitree/en/#converter</a>
+		</p></li>
+	</ul>
+</div>
+
+<p>Nicolas Martin &lt;joliclic at gmail dot com&gt;</p>
+</body>
+</html>
