@@ -1,0 +1,1102 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+          "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+    <title>example jolitree</title>
+
+<!--[if gte IE 7]> <!-->
+<link rel="stylesheet" type="text/css" media="screen" href="jolitree/css/jolitree-tango.css">
+<!--<![endif]-->
+<!--[if lt IE 7]>
+<link rel="stylesheet" type="text/css" media="screen" href="jolitree/css/jolitree-ie6.css">
+<![endif]-->
+
+<script type="text/javascript" src="jolitree/jolitree.js"></script>
+
+<style type="text/css">
+body {
+    font-family: sans-serif;
+    font-size: 12pt;
+    text-align: center;
+}
+#myTreeOne, #myTreeTwo,#myTreeThree, #myTreeFour, #myTreeFive, #myTreeSix {
+	width:300px;
+	float:left;
+}
+#myTree1,#myTree2,#myTree3,#myTree4,#myTree5,#myTree6,#myTree7,#myTree8,#myTree9,#myTree10,#myTree11,#myTree12,#myTree13,#myTree14, #myTree15,#myTree16,
+#myTree17,#myTree18,#myTree19,#myTree20,#myTree21,#myTree22, #myTree23,#myTree24  {
+    margin: auto auto 2em;
+    width: 16em;
+    padding: 1em;
+    border: 1px solid black;
+    text-align: left;
+}
+</style>
+
+<script type="text/javascript">
+function init() {
+	<?php
+	for($i=1;$i<25; $i++)
+	{
+	?>
+	var tree<?=$i?> = new JoliTree(document.getElementById("myTree<?=$i?>"));		
+	<?		
+	}
+	?>
+}
+
+window.onload = init;
+</script>
+</head>
+
+<body>
+    
+<h1>Document List</h1>
+<div id="myTreeOne">
+<dl id="myTree1" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree2" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree3" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree4" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+</div>
+<div id="myTreeTwo">
+<dl id="myTree5" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree6" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id= "myTree7" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree8" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+</div>
+
+<div id="myTreeThree">
+<dl id= "myTree9" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree10" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree11" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree12" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+</div>
+<div id="myTreeFour">
+<dl id="myTree13" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree14" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id= "myTree15" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree16" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+</div>
+
+<div id="myTreeFive">
+<dl id="myTree17" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree18" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree19" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree20" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+</div>
+<div id="myTreeSix">
+<dl id="myTree21" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree22" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id= "myTree23" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+<dl id="myTree24" class="jolitree">
+    <dd class="last opened">
+        <p>bookmarks</p>
+        <dl>
+            <dt><a href="#">a link 1</a> <em>- some text -</em></dt>
+            <dd class="opened">
+                <p>a folder 1</p>
+                <dl>
+                    <dt class="noicon">
+						<img src="img_example/favicon.png" alt="">
+						<a href="#">a link 2</a> (no icon)
+					</dt>
+                    <dt><a href="#">a link 3</a></dt>
+                    <dd class="last">
+                        <p>a folder 2</p>
+                        <dl>
+                            <dt><a href="#">a link 4</a></dt>
+							<dt class="last"><a href="#">a link 5</a></dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+            <dd class="last">
+                <p>a folder 3</p>
+                <dl>
+                    <dt><a href="#">a link 6</a></dt>
+                    <dd class="separator"><hr></dd>
+                    <dt><a href="#">a link 7</a></dt>
+                    <dd class="last">
+                        <p>a folder 4</p>
+                        <dl>
+                            <dt><a href="#">a link 8</a></dt>
+                            <dt class="noicon-last">
+								<img src="img_example/favicon.png" alt="">
+								<a href="#">a link 9 (no icon)</a>
+							</dt>
+                        </dl>
+                    </dd>
+                </dl>
+            </dd>
+        </dl>
+    </dd>
+</dl>
+</div>
+</body>
+</html>
